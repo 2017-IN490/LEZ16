@@ -10,9 +10,12 @@ public class lezione {
 	public static void main(String[] args) {
 		Sieve lista ;
 		
-		lista = new Sieve(args) ;
+	//	lista = new Sieve(args) ;
 	// test
-	lista.printmatrix();
+	//lista.printmatrix();
+	 int a;
+	 
+	 
 		
 		return ;
 	}
