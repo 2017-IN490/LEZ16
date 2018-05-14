@@ -11,8 +11,8 @@ public class Filter extends primes.Filter<Token> {
  public Filter(Item<Token> tail, BigInteger p ) {
 	super (tail,p) ;
     }
-	
 
+	
 /*
  // setters
 private void Set(Item<Token> tail, BigInteger p) {

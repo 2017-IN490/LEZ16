@@ -9,6 +9,36 @@ class Filter extends primes.Filter<Token> implements Bidimensional<Token> {
 	
 	
 // costruttori
+Filter(Item<Token> tail, BigInteger p, Token r) {
+	super(tail,p) ;
+	
+	BigInteger exp = BigInteger.ZERO ;
+	
+	while(test(r)) {
+		exp = exp.add(BigInteger.ONE);
+		System.out.println("dividing "+r.value2()+" by "+this.value()+"-> exponent "+exp);
+		r.Set(r.value().divide(this.value()));
+		//tok.SetPrimality(false) ;
+	}
+	
+	
+	try {
+		tmp = ((Filter)tail).column();
+		System.out.println(" reference to next object (step): "+tmp);
+		this.column = new Matrix(tmp , this.setzerocolumn(tmp), exp);
+	}
+	catch (ClassCastException e) {
+		
+		tmp = null ;
+		
+		System.out.println(" reference to next object (2): "+tmp);
+		this.column = new Matrix(tmp , tmp, exp);
+		
+	};
+	
+	
+}
+	
 Filter(Item<Token> tail, BigInteger p) {
 		super(tail,p) ;
 		
@@ -65,7 +95,7 @@ private Token  factorize(Token tok)  {
 			exp = exp.add(BigInteger.ONE);
 			System.out.println("dividing "+tok.value2()+" by "+this.value()+"-> exponent "+exp);
 			tok.Set(tok.value().divide(this.value()));
-			tok.SetPrimality(false) ;
+			//tok.SetPrimality(false) ;
 		}
 				
 		/*if( this.value().compareTo(new BigInteger("2")) == 0 )

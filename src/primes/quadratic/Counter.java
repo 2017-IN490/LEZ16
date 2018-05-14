@@ -20,7 +20,7 @@ public Counter(BigInteger f) {
 	// TODO Auto-generated constructor stub
 	this();
 	this.factoring = f ;
-	this.root = squareroot(f) ;
+	this.root = squareroot(f).add(BigInteger.ONE) ;
 	
 }
 

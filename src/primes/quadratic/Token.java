@@ -45,6 +45,11 @@ class Token extends primes.erathostenes.Token {
 		return this.safenum ;
 	}
 	
+	public BigInteger candidate() {
+		System.out.println("in quadratic Token "+this.candidate);
+		return this.candidate ;
+	}
+	
 	boolean primality() {
 		return this.primality;
 	}
