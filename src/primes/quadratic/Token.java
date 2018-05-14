@@ -11,6 +11,7 @@ import java.math.BigInteger ;
 
 class Token extends primes.erathostenes.Token {
 	private BigInteger safenum ;
+	private BigInteger candidate ;
 	private boolean primality ;
 
 	static final BigInteger TWO = new BigInteger("2");
@@ -25,13 +26,14 @@ class Token extends primes.erathostenes.Token {
 	public void Set(BigInteger n) {
 		super.Set(n) ;
 		//this.safenum = n;
-		this.primality = true ;
+		//this.primality = true ;
 	}
 	
-	public void Reset(BigInteger n) {
+	public void Reset(BigInteger r, BigInteger n) {
 		super.Set(n) ;
 		this.safenum = n;
-		this.primality = true ;
+		this.candidate = r ;
+		//this.primality = true ;
 	}
 	
 	public void SetPrimality(boolean b) {
